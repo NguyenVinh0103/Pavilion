@@ -13,10 +13,12 @@ import FastImage from 'react-native-fast-image';
 import {BACKGROUNDLOGIN, LOGOLOGIN, FACEBOOK, TWITTER} from '../../assets';
 import {normalize, normalizeHorizontal} from '../../helper';
 import {TextInput} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const {height} = Dimensions.get('window');
 
 export const Login = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar
@@ -55,17 +57,36 @@ export const Login = () => {
             style={styles.tipPassword}
           />
         </View>
-        <Text style = {styles.txtLoginAccount}>{'Login with account'}</Text>
-        <View style = {styles.flex}>
-        <View style= {styles.borderLogo}>
-            <FastImage source={FACEBOOK} resizeMode = 'contain' style = {styles.imgFacebook} />
+        <Text style={styles.txtLoginAccount}>{'Login with account'}</Text>
+        <View style={styles.flex}>
+          <TouchableOpacity style={styles.borderLogo}>
+            <FastImage
+              source={FACEBOOK}
+              resizeMode="contain"
+              style={styles.imgFacebook}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.borderLogo}>
+            <FastImage
+              source={TWITTER}
+              resizeMode="contain"
+              style={styles.imgTwitter}
+            />
+          </TouchableOpacity>
         </View>
-        <View style= {styles.borderLogo}>
-            <FastImage source={TWITTER} resizeMode = 'contain' style = {styles.imgTwitter} />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Home')}
+          style={styles.btnSignIn}>
+          <Text style={styles.txtSignIn}>{'Sign in'}</Text>
+        </TouchableOpacity>
+        <View style={styles.txtAcc}>
+          <Text style={styles.txtCreateAccount}>
+            {'Don’t have any account? '}
+            <TouchableOpacity>
+              <Text style={styles.txtRegister}>{'Register'}</Text>
+            </TouchableOpacity>
+          </Text>
         </View>
-
-        </View>
-        
       </ImageBackground>
     </View>
   );
@@ -113,17 +134,65 @@ const styles = StyleSheet.create({
     height: normalize(50),
     fontSize: normalize(16),
   },
-  txtLoginAccount:{
+  txtLoginAccount: {
     fontSize: normalize(18),
     fontWeight: '500',
     lineHeight: normalize(26),
-    marginLeft: normalizeHorizontal(20)
+    marginLeft: normalizeHorizontal(20),
   },
-  flex:{
-    flexDirection: 'row'
+  flex: {
+    flexDirection: 'row',
+    alignSelf: 'center',
   },
-  borderLogo:{
+  borderLogo: {
     borderWidth: 1,
-    borderColor: '#000'
-  }
+    borderColor: '#000',
+    width: normalizeHorizontal(80),
+    alignItems: 'center',
+    borderRadius: 10,
+    height: normalize(50),
+    justifyContent: 'center',
+    marginHorizontal: normalizeHorizontal(20),
+    marginTop: normalize(20),
+  },
+  imgFacebook: {
+    height: normalize(28),
+    aspectRatio: 1,
+  },
+  imgTwitter: {
+    height: normalize(28),
+    aspectRatio: 1,
+  },
+  btnSignIn: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#000D3D',
+    width: normalizeHorizontal(200),
+    height: normalize(40),
+    borderRadius: 20,
+    marginTop: normalize(20),
+  },
+  txtSignIn: {
+    color: '#fff',
+    fontSize: normalize(18),
+    lineHeight: normalize(26),
+    fontWeight: '500',
+  },
+  txtAcc: {
+    alignSelf: 'center',
+    marginTop: normalize(20),
+  },
+  txtCreateAccount: {
+    color: '#000',
+    fontSize: normalize(14),
+    lineHeight: normalize(20),
+    fontWeight: '500',
+  },
+  txtRegister: {
+    fontSize: normalize(14),
+    fontWeight: '700',
+    lineHeight: normalize(20),
+    color: '#000',
+  },
 });
