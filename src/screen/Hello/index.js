@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import FastImage from 'react-native-fast-image';
 
-import {BACKGROUND, LOGO} from '../../assets';
+import {IMG_BACKGROUND, IMG_LOGO} from '../../assets';
 import {normalize} from '../../helper';
 import {useNavigation} from '@react-navigation/native';
 
@@ -28,11 +28,11 @@ export const Hello = () => {
       />
       <ImageBackground
         style={styles.background}
-        source={BACKGROUND}
+        source={IMG_BACKGROUND}
         resizeMode="contain">
         <View style={styles.content}>
           <FastImage
-            source={LOGO}
+            source={IMG_LOGO}
             resizeMode="contain"
             style={styles.imgLogo}
           />

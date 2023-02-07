@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import FastImage from 'react-native-fast-image';
 
-import {BACKGROUNDLOGIN, LOGOLOGIN, FACEBOOK, TWITTER} from '../../assets';
+import {IMG_BACKGROUNDLOGIN, IMG_LOGOLOGIN, IC_FACEBOOK, IC_TWITTER} from '../../assets';
 import {normalize, normalizeHorizontal} from '../../helper';
 import {TextInput} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
@@ -28,11 +28,11 @@ export const Login = () => {
       />
       <ImageBackground
         style={styles.background}
-        source={BACKGROUNDLOGIN}
+        source={IMG_BACKGROUNDLOGIN}
         resizeMode="contain">
         <View style={styles.content}>
           <FastImage
-            source={LOGOLOGIN}
+            source={IMG_LOGOLOGIN}
             resizeMode="contain"
             style={styles.imgLogo}
           />
@@ -61,14 +61,14 @@ export const Login = () => {
         <View style={styles.flex}>
           <TouchableOpacity style={styles.borderLogo}>
             <FastImage
-              source={FACEBOOK}
+              source={IC_FACEBOOK}
               resizeMode="contain"
               style={styles.imgFacebook}
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.borderLogo}>
             <FastImage
-              source={TWITTER}
+              source={IC_TWITTER}
               resizeMode="contain"
               style={styles.imgTwitter}
             />
