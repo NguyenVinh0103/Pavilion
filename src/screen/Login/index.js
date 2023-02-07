@@ -10,7 +10,12 @@ import {
 import React from 'react';
 import FastImage from 'react-native-fast-image';
 
-import {IMG_BACKGROUNDLOGIN, IMG_LOGOLOGIN, IC_FACEBOOK, IC_TWITTER} from '../../assets';
+import {
+  IMG_BACKGROUNDLOGIN,
+  IMG_LOGOLOGIN,
+  IC_FACEBOOK,
+  IC_TWITTER,
+} from '../../assets';
 import {normalize, normalizeHorizontal} from '../../helper';
 import {TextInput} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
@@ -79,14 +84,12 @@ export const Login = () => {
           style={styles.btnSignIn}>
           <Text style={styles.txtSignIn}>{'Sign in'}</Text>
         </TouchableOpacity>
-        <View style={styles.txtAcc}>
+        <TouchableOpacity style={styles.txtAcc}>
           <Text style={styles.txtCreateAccount}>
             {'Don’t have any account? '}
-            <TouchableOpacity>
-              <Text style={styles.txtRegister}>{'Register'}</Text>
-            </TouchableOpacity>
+            <Text style={styles.txtRegister}>{'Register'}</Text>
           </Text>
-        </View>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
