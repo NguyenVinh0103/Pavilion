@@ -4,6 +4,10 @@ export const IMG_LOGO = require('./images/logo.png')
 export const IMG_BACKGROUNDLOGIN = require('./images/backgroundLogin.png')
 export const IMG_LOGOLOGIN = require('./images/logoLogin.png')
 export const IMG_AVATAR = require('./images/avatar.png')
+export const IMG_FLORIDA = require('./images/img_Florida.png')
+export const IMG_MALADEWA= require('./images/img_Maladewa.png')
+export const IMG_INDONESIA = require('./images/img_Indonesia.png')
+
 
 
 

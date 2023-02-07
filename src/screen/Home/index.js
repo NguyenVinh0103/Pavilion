@@ -51,6 +51,7 @@ export const Home = () => {
         </View>
       </View>
       <Onboarding />
+      <Text style = {styles.txtExplore}>{'Explore'}</Text>
     </View>
   );
 };
@@ -98,5 +99,12 @@ const styles = StyleSheet.create({
     fontWeight:'400',
     color:'#000',
     lineHeight: normalize(22)
+  },
+  txtExplore:{
+    fontSize: normalize(20),
+    fontWeight:'500',
+    color:'#000',
+    lineHeight: normalize(22),
+    marginLeft: normalizeHorizontal(20)
   }
 });

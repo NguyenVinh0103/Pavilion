@@ -9,14 +9,12 @@ import {
 } from 'react-native';
 import {colors, normalize, normalizeHorizontal} from '../helper';
 import Paginator from './Paginator';
-import advertise from '../../advertise';
 import product from '../../product';
 import OnboardingItem from './OnboardingItem';
 
-const OnboardingComp = ({}) => {
+const BookProduct = ({}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
-  const advertiseRef = useRef(null);
   const productRef = useRef(null)
 
   const viewableItemsChanged = useRef(({viewableItems}) => {
@@ -26,7 +24,7 @@ const OnboardingComp = ({}) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={advertise}
+        data={product}
         renderItem={({item}) => <OnboardingItem item={item} />}
         horizontal
         showsHorizontalScrollIndicator = {false}
@@ -40,9 +38,9 @@ const OnboardingComp = ({}) => {
           },
         )}
         onViewableItemsChanged={viewableItemsChanged}
-        ref={advertiseRef}
+        ref={productRef}
       />
-      <Paginator data={advertise} scrollX={scrollX} />
+      <Paginator data={product} scrollX={scrollX} />
     </View>
   );
 };
