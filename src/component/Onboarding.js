@@ -10,7 +10,6 @@ import {
 import {colors, normalize, normalizeHorizontal} from '../helper';
 import Paginator from './Paginator';
 import advertise from '../../advertise';
-import product from '../../product';
 import OnboardingItem from './OnboardingItem';
 
 const OnboardingComp = ({}) => {
