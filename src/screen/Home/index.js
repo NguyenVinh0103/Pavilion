@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     height: normalize(40),
     aspectRatio: 1,
     borderRadius: 100 / 2,
-    backgroundColor: 'rgba(35, 46, 86, 0.65);',
+    backgroundColor: '#d97000',
     justifyContent: 'center',
     alignItems: 'center',
   },

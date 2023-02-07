@@ -7,13 +7,13 @@ export default [
   },
   {
     id: 2,
-    name : 'Exciting couple tour for next vacation',
+    name : 'One day tour with family and friends',
     price: '35% OFF',
     btnBook: 'Book now'
   },
   {
     id: 3,
-    name : 'Exciting couple tour for next vacation',
+    name : 'Fill your boredom life with travel fever',
     price: '45% OFF',
     btnBook: 'Book now'
   },
